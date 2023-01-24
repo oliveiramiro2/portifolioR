@@ -8,7 +8,7 @@ const App = () => {
         <div className="App">
             <h1>Vite + React</h1>
             <div className="card">
-                <button type="button" onClick={() => setCount((v) => v + 1)}>
+                <button type="button" onClick={() => setCount(v => v + 1)}>
                     count is {count}
                 </button>
                 <p>

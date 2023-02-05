@@ -25,6 +25,10 @@ module.exports = {
         animation: {
             blink: "blink .8s infinite"
         },
+        fontFamily: {
+            'itim': ['itim', 'cursive'],
+            'great-vibes': ['"Great Vibes"', 'cursive'],
+        },
     },
   },
   plugins: [],

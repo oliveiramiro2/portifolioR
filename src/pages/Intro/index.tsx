@@ -61,7 +61,7 @@ const Intro: React.FC = () => {
                                 <li>
                                     <Link
                                         to="/contact"
-                                        className="text-white flex items-center gap-1"
+                                        className="text-white font-itim flex items-center gap-1"
                                     >
                                         <MdOutlineConnectWithoutContact
                                             color="#fff"
@@ -73,7 +73,7 @@ const Intro: React.FC = () => {
                                 <li>
                                     <Link
                                         to="/skills"
-                                        className="text-white flex items-center gap-1"
+                                        className="text-white font-itim flex items-center gap-1"
                                     >
                                         <GiSkills color="#fff" size={20} />
                                         <span>Habilidades</span>
@@ -82,7 +82,7 @@ const Intro: React.FC = () => {
                                 <li>
                                     <Link
                                         to="/projects"
-                                        className="text-white flex items-center gap-1 mr-2"
+                                        className="text-white font-itim flex items-center gap-1 mr-2"
                                     >
                                         <HiOutlineDeviceMobile
                                             color="#fff"
@@ -97,7 +97,7 @@ const Intro: React.FC = () => {
                 </ParallaxLayer>
                 <ParallaxLayer sticky={{ start: 2, end: 3 }}>
                     <div>
-                        <h2 className="text-8xl text-white pl-10 pt-10 max-xl:text-6xl max-sm:text-center max-sm:pl-0">
+                        <h2 className="text-8xl font-itim text-white pl-10 pt-10 max-xl:text-6xl max-sm:text-center max-sm:pl-0">
                             Seja bem vindo!
                         </h2>
                     </div>
@@ -107,7 +107,7 @@ const Intro: React.FC = () => {
                         <div className="bg-opacity-50 bg-black ml-9 p-1 rounded-md max-lg:ml-0 max-lg:flex max-lg:items-center max-lg:w-3/4">
                             <p
                                 id="textMyInfo"
-                                className="text-white max-md:text-lg max-lg:text-center text-4xl after:content-['|'] after:ml-1 after:animate-blink after:text-cyan-300"
+                                className="text-white font-great-vibes max-md:text-lg max-lg:text-center text-4xl after:content-['|'] after:ml-1 after:animate-blink after:text-cyan-300"
                             >
                                 Me chamo Ramiro. Eu sou desenvolvedor
                                 Web/Mobile. Estudante de TI, apaixonado por
@@ -122,7 +122,7 @@ const Intro: React.FC = () => {
                             <li>
                                 <Link
                                     to="/contact"
-                                    className="text-white flex items-center gap-1"
+                                    className="text-white font-itim flex items-center gap-1"
                                 >
                                     <MdOutlineConnectWithoutContact
                                         color="#fff"
@@ -134,7 +134,7 @@ const Intro: React.FC = () => {
                             <li>
                                 <Link
                                     to="/skills"
-                                    className="text-white flex items-center gap-1"
+                                    className="text-white font-itim flex items-center gap-1"
                                 >
                                     <GiSkills color="#fff" size={20} />
                                     <span>Habilidades</span>
@@ -143,7 +143,7 @@ const Intro: React.FC = () => {
                             <li>
                                 <Link
                                     to="/projects"
-                                    className="text-white flex items-center gap-1 mr-2"
+                                    className="text-white font-itim flex items-center gap-1 mr-2"
                                 >
                                     <HiOutlineDeviceMobile
                                         color="#fff"

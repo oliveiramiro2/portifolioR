@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import Intro from "../../components/Intro";
 
 const Home: React.FC = () => {
-  return (
-    <div className='w-screen h-screen bg-black flex justify-center items-center'>
-        <p className='text-white'>HOME</p>
-    </div>
-  )
-}
+    return (
+        <div className="w-screen h-screen">
+            <Intro />
+        </div>
+    );
+};
 
-export default Home
+export default Home;

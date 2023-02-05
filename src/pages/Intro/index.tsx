@@ -1,5 +1,9 @@
 import React, { useEffect } from "react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import { MdOutlineConnectWithoutContact } from "react-icons/md";
+import { GiSkills } from "react-icons/gi";
+import { HiOutlineDeviceMobile } from "react-icons/hi";
+import { Link } from "react-router-dom";
 
 const Intro: React.FC = () => {
     const writeInfo: Function = (elementT: HTMLBodyElement): void => {
@@ -17,7 +21,7 @@ const Intro: React.FC = () => {
         setTimeout(() => {
             const elementText = document.querySelector("#textMyInfo");
             writeInfo(elementText);
-        }, 1000);
+        }, 500);
     }, []);
 
     return (
@@ -55,31 +59,37 @@ const Intro: React.FC = () => {
                         <div className="self-start w-screen h-10 bg-black bg-opacity-80">
                             <ul className="h-10 flex justify-between items-center pr-10 pl-10">
                                 <li>
-                                    <a
-                                        href="https://tailwindcss.com/docs/hover-focus-and-other-states#before-and-after"
-                                        rel="noreferrer"
-                                        className="text-white"
+                                    <Link
+                                        to="/contact"
+                                        className="text-white flex items-center gap-1"
                                     >
+                                        <MdOutlineConnectWithoutContact
+                                            color="#fff"
+                                            size={20}
+                                        />
                                         <span>Contatos</span>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li>
-                                    <a
-                                        href="example.com"
-                                        rel="noreferrer"
-                                        className="text-white"
+                                    <Link
+                                        to="/skills"
+                                        className="text-white flex items-center gap-1"
                                     >
-                                        Habilidades
-                                    </a>
+                                        <GiSkills color="#fff" size={20} />
+                                        <span>Habilidades</span>
+                                    </Link>
                                 </li>
                                 <li>
-                                    <a
-                                        href="example.com"
-                                        rel="noreferrer"
-                                        className="text-white"
+                                    <Link
+                                        to="/projects"
+                                        className="text-white flex items-center gap-1 mr-2"
                                     >
-                                        Projetos
-                                    </a>
+                                        <HiOutlineDeviceMobile
+                                            color="#fff"
+                                            size={20}
+                                        />
+                                        <span>Projetos</span>
+                                    </Link>
                                 </li>
                             </ul>
                         </div>
@@ -106,39 +116,45 @@ const Intro: React.FC = () => {
                         </div>
                     </div>
                 </ParallaxLayer>
-                {/* <ParallaxLayer sticky={{ start: 3, end: 3 }} factor={1.5}>
-                    <div className="self-start w-screen h-10 bg-black bg-opacity-80">
-                        <ul className="h-10 flex justify-between items-center pr-10 pl-10">
+                <ParallaxLayer sticky={{ start: 3, end: 3 }} factor={1.5}>
+                    <div className="self-start w-screen h-10 bg-black bg-opacity-0">
+                        <ul className="h-10 flex justify-between items-center pr-10 pl-10 opacity-0">
                             <li>
-                                <a
-                                    href="https://tailwindcss.com/docs/hover-focus-and-other-states#before-and-after"
-                                    rel="noreferrer"
-                                    className="text-white"
+                                <Link
+                                    to="/contact"
+                                    className="text-white flex items-center gap-1"
                                 >
+                                    <MdOutlineConnectWithoutContact
+                                        color="#fff"
+                                        size={20}
+                                    />
                                     <span>Contatos</span>
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a
-                                    href="example.com"
-                                    rel="noreferrer"
-                                    className="text-white"
+                                <Link
+                                    to="/skills"
+                                    className="text-white flex items-center gap-1"
                                 >
-                                    Habilidades
-                                </a>
+                                    <GiSkills color="#fff" size={20} />
+                                    <span>Habilidades</span>
+                                </Link>
                             </li>
                             <li>
-                                <a
-                                    href="example.com"
-                                    rel="noreferrer"
-                                    className="text-white"
+                                <Link
+                                    to="/projects"
+                                    className="text-white flex items-center gap-1 mr-2"
                                 >
-                                    Projetos
-                                </a>
+                                    <HiOutlineDeviceMobile
+                                        color="#fff"
+                                        size={20}
+                                    />
+                                    <span>Projetos</span>
+                                </Link>
                             </li>
                         </ul>
                     </div>
-                </ParallaxLayer> */}
+                </ParallaxLayer>
             </Parallax>
         </div>
     );

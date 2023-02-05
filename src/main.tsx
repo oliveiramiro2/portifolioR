@@ -1,15 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { ParallaxProvider } from "react-scroll-parallax";
+import { BrowserRouter } from "react-router-dom";
 
-import Home from "./pages/Home";
+import PortfolioRoutes from "./routes";
 
 import "./style/global.css";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <ParallaxProvider>
-        <React.StrictMode>
-            <Home />
-        </React.StrictMode>
+        <BrowserRouter>
+            <React.StrictMode>
+                <PortfolioRoutes />
+            </React.StrictMode>
+        </BrowserRouter>
     </ParallaxProvider>
 );

@@ -5,6 +5,7 @@ import Netflix from "../../assets/netflix2.png";
 import Pokedex from "../../assets/Pokedex2.png";
 import Youtube from "../../assets/youtube2.png";
 import Breve from "../../assets/breve.png";
+import Header from "../../components/Header";
 
 const projectsKeys = [
     {
@@ -40,7 +41,8 @@ const Projects: React.FC = () => {
 
     return (
         <div className="min-h-screen bg-black pb-10">
-            <div className="animate__animated animate__slideInDown animate__slow w-screen flex justify-center pt-10">
+            <Header white page={3} />
+            <div className="animate__animated animate__slideInDown animate__slow w-screen flex justify-center pt-20">
                 <h2
                     id="projects"
                     className="text-white flex text-center font-great-vibes text-6xl"
@@ -50,7 +52,7 @@ const Projects: React.FC = () => {
             </div>
             {numberProjectShowed === undefined ? (
                 <div className="w-screen flex flex-wrap mt-20 justify-between p-10">
-                    <div className="w-2/5 max-md:w-full border rounded-lg flex flex-col items-center p-10 bg-white hover:bg-gray-200 mt-10 animate__animated animate__slideInLeft animate__slow border-red-600">
+                    <div className="w-2/5 max-md:w-full border rounded-lg flex flex-col items-center p-10 bg-white hover:bg-gray-200 mt-10 animate__animated animate__slideInLeft border-red-600">
                         <p className="text-3xl font-extrabold tracking-wider font-great-vibes textDescribe">
                             Netflix
                         </p>
@@ -64,7 +66,7 @@ const Projects: React.FC = () => {
                             Aplicativo React-Native
                         </p>
                     </div>
-                    <div className="w-2/5 max-md:w-full border rounded-lg flex flex-col items-center p-10 bg-white hover:bg-gray-200 mt-10 animate__animated animate__slideInRight animate__slow border-red-600">
+                    <div className="w-2/5 max-md:w-full border rounded-lg flex flex-col items-center p-10 bg-white hover:bg-gray-200 mt-10 animate__animated animate__slideInRight border-red-600">
                         <p className="text-3xl font-extrabold tracking-wider font-great-vibes textDescribe">
                             Pokédex
                         </p>
@@ -96,19 +98,19 @@ const Projects: React.FC = () => {
                         </p>
                         <img className="p-20" src={Breve} alt="Breve" />
                     </div>
-                    <div className="w-2/5 max-md:w-full border rounded-lg flex flex-col items-center p-10 bg-white mt-10 animate__animated animate__slideInLeft animate__slow border-red-600">
+                    <div className="w-2/5 max-md:w-full border rounded-lg flex flex-col items-center p-10 bg-white mt-10 animate__animated animate__slideInLeft animate__slower border-red-600">
                         <p className="text-3xl font-extrabold tracking-wider font-great-vibes textDescribe">
                             Em Breve
                         </p>
                         <img className="p-20" src={Breve} alt="Breve" />
                     </div>
-                    <div className="w-2/5 max-md:w-full border rounded-lg flex flex-col items-center p-10 bg-white mt-10 animate__animated animate__slideInRight animate__slow border-red-600">
+                    <div className="w-2/5 max-md:w-full border rounded-lg flex flex-col items-center p-10 bg-white mt-10 animate__animated animate__slideInRight animate__slower border-red-600">
                         <p className="text-3xl font-extrabold tracking-wider font-great-vibes textDescribe">
                             Em Breve
                         </p>
                         <img className="p-20" src={Breve} alt="Breve" />
                     </div>
-                    <div className="w-2/5 max-md:w-full border rounded-lg flex flex-col items-center p-10 bg-white mt-10 animate__animated animate__slideInLeft animate__slow border-red-600">
+                    <div className="w-2/5 max-md:w-full border rounded-lg flex flex-col items-center p-10 bg-white mt-10 animate__animated animate__slideInLeft animate__slower border-red-600">
                         <p className="text-3xl font-extrabold tracking-wider font-great-vibes textDescribe">
                             Em Breve
                         </p>
@@ -120,7 +122,7 @@ const Projects: React.FC = () => {
                     <div>
                         <div className="cursor-pointer">
                             <p
-                                className="font-itim flex items-center font-extrabold gap-1 m-2"
+                                className="font-itim flex items-center font-extrabold gap-1 m-2 text-red-500"
                                 onClick={() =>
                                     setNumberProjectShowed(undefined)
                                 }
@@ -151,7 +153,9 @@ const Projects: React.FC = () => {
                                     </a>
                                 </p>
                             )}
-                            <p className="font-itim font-bold text-lg">Aprecie ☺</p>
+                            <p className="font-itim font-bold text-lg">
+                                Aprecie ☺
+                            </p>
                             <a
                                 href={
                                     projectsKeys[numberProjectShowed]

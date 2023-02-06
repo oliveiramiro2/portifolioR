@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { BiArrowBack } from "react-icons/bi";
-import ScrollAnimation from "react-animate-on-scroll";
+/* import ScrollEffect from 'react-scroll-effects'; */
 
 import Netflix from "../../assets/netflix2.png";
 import Pokedex from "../../assets/Pokedex2.png";
@@ -41,15 +41,13 @@ const Projects: React.FC = () => {
 
     return (
         <div className="min-h-screen max-w-screen bg-black">
-            <div>
-                <ScrollAnimation animateIn="fadeIn">
-                    <h2
-                        id="projects"
-                        className="text-white flex text-center border border-red-50 font-great-vibes text-6xl"
-                    >
-                        Projetos
-                    </h2>
-                </ScrollAnimation>
+            <div className="animate__animated animate__slideInLeft animate__slow w-screen flex justify-center pt-10">
+                <h2
+                    id="projects"
+                    className="text-white flex text-center font-great-vibes text-6xl"
+                >
+                    Projetos
+                </h2>
             </div>
             {numberProjectShowed === undefined ? (
                 <div className="containProjectsImgs">

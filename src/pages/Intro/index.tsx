@@ -110,7 +110,7 @@ const Intro: React.FC = () => {
                                 className="text-white font-great-vibes max-md:text-lg max-lg:text-center text-4xl after:content-['|'] after:ml-1 after:animate-blink after:text-cyan-300"
                             >
                                 Me chamo Ramiro. Eu sou desenvolvedor
-                                Web/Mobile. Estudante de TI, apaixonado por
+                                Web/Mobile. Estudante de t.i., apaixonado por
                                 tecnologia e programação!!!
                             </p>
                         </div>

@@ -53,7 +53,7 @@ const Projects: React.FC = () => {
             {numberProjectShowed === undefined ? (
                 <div className="w-screen flex flex-wrap mt-20 justify-between p-10">
                     <div className="w-2/5 max-md:w-full border rounded-lg flex flex-col items-center p-10 bg-white hover:bg-gray-200 mt-10 animate__animated animate__slideInLeft border-red-600">
-                        <p className="text-3xl font-extrabold tracking-wider font-great-vibes textDescribe">
+                        <p className="text-3xl font-extrabold tracking-wider font-great-vibes">
                             Netflix
                         </p>
                         <img

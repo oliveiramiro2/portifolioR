@@ -5,7 +5,6 @@ import {
     AiFillFilePdf,
     AiOutlineWhatsApp,
 } from "react-icons/ai";
-import { CgWebsite } from "react-icons/cg";
 import { SiGmail } from "react-icons/si";
 
 import Header from "../../components/Header";
@@ -49,18 +48,6 @@ const ContactUs: React.FC = () => {
                 </div>
                 <div className="animate__animated animate__bounceInLeft">
                     <a
-                        href="https://portifolio-ramiro.netlify.app/"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        <div className="flex items-center gap-2 pl-5">
-                            <CgWebsite size={35} />
-                            <span className="font-extrabold"> Portifólio </span>
-                        </div>
-                    </a>
-                </div>
-                <div className="animate__animated animate__bounceInLeft animate__slow">
-                    <a
                         href="https://drive.google.com/file/d/1_5deK1Pf4RFVfO0hiirNqSMOsZWnFUz_/view?usp=share_link"
                         target="_blank"
                         rel="noreferrer"
@@ -71,31 +58,23 @@ const ContactUs: React.FC = () => {
                         </div>
                     </a>
                 </div>
-                <div className="animate__animated animate__bounceInLeft  animate__slower">
-                    <a
-                        href="https://portifolio-ramiro.netlify.app/"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="cursor-text"
-                    >
-                        <div className="flex items-center gap-2 pl-5">
-                            <AiOutlineWhatsApp color="#0f0" size={35} />
-                            <span className="font-extrabold"> Whatsapp: 37 988037773 </span>
-                        </div>
-                    </a>
+                <div className="animate__animated animate__bounceInLeft  animate__slow">
+                    <div className="flex items-center gap-2 pl-5">
+                        <AiOutlineWhatsApp color="#0f0" size={35} />
+                        <span className="font-extrabold">
+                            {" "}
+                            Whatsapp: 37 988037773{" "}
+                        </span>
+                    </div>
                 </div>
                 <div className="animate__animated animate__bounceInLeft  animate__slower">
-                    <a
-                        href="https://portifolio-ramiro.netlify.app/"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="cursor-text"
-                    >
-                        <div className="flex items-center gap-2 pl-5">
-                            <SiGmail color="#f00" size={35} />
-                            <span className="font-extrabold"> E-mail: ramiromares95@gmail.com </span>
-                        </div>
-                    </a>
+                    <div className="flex items-center gap-2 pl-5">
+                        <SiGmail color="#f00" size={35} />
+                        <span className="font-extrabold">
+                            {" "}
+                            E-mail: ramiromares95@gmail.com{" "}
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>

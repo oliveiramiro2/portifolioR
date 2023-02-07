@@ -65,7 +65,7 @@ const Skills: React.FC = () => {
     }, [numberShowSkill]);
 
     return (
-        <div className="min-h-screen bg-black">
+        <div className="min-h-screen bg-black m-3 mt-10 mb-10 rounded-lg">
             <Header white page={2} />
             <div>
                 <div className="animate__animated animate__slideInDown animate__slow w-screen flex justify-center pt-20">
@@ -77,7 +77,7 @@ const Skills: React.FC = () => {
                     </p>
                 </div>
                 <div className="mt-20 flex flex-col items-center justify-center">
-                    <div className="w-screen flex flex-wrap items-end justify-center gap-5 bg-slate-200 mb-10 pb-6">
+                    <div className="w-full rounded-2xl flex flex-wrap items-end justify-center gap-5 bg-white mb-10 pb-6">
                         <div className="animate__animated animate__fadeInUp">
                             <div
                                 id="containImg0"
@@ -120,7 +120,7 @@ const Skills: React.FC = () => {
                                 />
                             </div>
                         </div>
-                        <div className="animate__animated animate__slideInLeft">
+                        <div className="animate__animated animate__slideInDown">
                             <div
                                 id="containImg3"
                                 className="animate__animated rounded-full h-28 w-28 flex items-center justify-center hover:bg-blue-700 mt-10"
@@ -134,7 +134,7 @@ const Skills: React.FC = () => {
                                 />
                             </div>
                         </div>
-                        <div className="animate__animated animate__slideInLeft">
+                        <div className="animate__animated animate__slideInRight">
                             <div
                                 id="containImg4"
                                 className="animate__animated rounded-full h-28 w-28 flex items-center justify-center hover:bg-blue-700 mt-10"
@@ -148,7 +148,7 @@ const Skills: React.FC = () => {
                                 />
                             </div>
                         </div>
-                        <div className="animate__animated animate__slideInLeft">
+                        <div className="animate__animated animate__slideInRight">
                             <div
                                 id="containImg5"
                                 className="animate__animated rounded-full h-28 w-28 flex items-center justify-center hover:bg-blue-700 mt-10"
@@ -162,7 +162,7 @@ const Skills: React.FC = () => {
                                 />
                             </div>
                         </div>
-                        <div className="animate__animated animate__slideInLeft">
+                        <div className="animate__animated animate__slideInRight">
                             <div
                                 id="containImg6"
                                 className="animate__animated rounded-full h-28 w-28 flex items-center justify-center hover:bg-blue-700 mt-10"

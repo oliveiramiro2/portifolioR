@@ -61,7 +61,7 @@ const ContactUs: React.FC = () => {
                 </div>
                 <div className="animate__animated animate__bounceInLeft animate__slow">
                     <a
-                        href="https://portifolio-ramiro.netlify.app/"
+                        href="https://drive.google.com/file/d/1_5deK1Pf4RFVfO0hiirNqSMOsZWnFUz_/view?usp=share_link"
                         target="_blank"
                         rel="noreferrer"
                     >

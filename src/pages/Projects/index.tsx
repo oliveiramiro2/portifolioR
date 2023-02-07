@@ -40,7 +40,7 @@ const Projects: React.FC = () => {
     >(undefined);
 
     return (
-        <div className="min-h-screen bg-black pb-10">
+        <div className="min-h-screen bg-black pb-10 m-3 mt-10 mb-10 rounded-lg">
             <Header white page={3} />
             <div className="animate__animated animate__slideInDown animate__slow w-screen flex justify-center pt-20">
                 <h2
@@ -51,8 +51,8 @@ const Projects: React.FC = () => {
                 </h2>
             </div>
             {numberProjectShowed === undefined ? (
-                <div className="w-screen flex flex-wrap mt-20 justify-between p-10">
-                    <div className="w-2/5 max-md:w-full border rounded-lg flex flex-col items-center p-10 bg-white hover:bg-gray-200 mt-10 animate__animated animate__slideInLeft border-red-600">
+                <div className="w-full flex flex-wrap mt-20 justify-between p-10">
+                    <div className="w-2/5 max-md:w-full border rounded-lg flex flex-col items-center p-10 bg-white hover:bg-gray-200 mt-10 animate__animated animate__bounceInLeft border-red-600">
                         <p className="text-3xl font-extrabold tracking-wider font-great-vibes">
                             Netflix
                         </p>
@@ -66,7 +66,7 @@ const Projects: React.FC = () => {
                             Aplicativo React-Native
                         </p>
                     </div>
-                    <div className="w-2/5 max-md:w-full border rounded-lg flex flex-col items-center p-10 bg-white hover:bg-gray-200 mt-10 animate__animated animate__slideInRight border-red-600">
+                    <div className="w-2/5 max-md:w-full border rounded-lg flex flex-col items-center p-10 bg-white hover:bg-gray-200 mt-10 animate__animated animate__bounceInRight border-red-600">
                         <p className="text-3xl font-extrabold tracking-wider font-great-vibes textDescribe">
                             Pokédex
                         </p>
@@ -78,7 +78,7 @@ const Projects: React.FC = () => {
                         />
                         <p className="font-extrabold">Aplicativo ReactJS</p>
                     </div>
-                    <div className="w-2/5 max-md:w-full border rounded-lg flex flex-col items-center p-10 bg-white hover:bg-gray-200 mt-10 animate__animated animate__slideInLeft animate__slow border-red-600">
+                    <div className="w-2/5 max-md:w-full border rounded-lg flex flex-col items-center p-10 bg-white hover:bg-gray-200 mt-10 animate__animated animate__bounceInLeft animate__slow border-red-600">
                         <p className="text-3xl font-extrabold tracking-wider font-great-vibes textDescribe">
                             Youtube
                         </p>
@@ -92,25 +92,25 @@ const Projects: React.FC = () => {
                             Aplicativo React-Native
                         </p>
                     </div>
-                    <div className="w-2/5 max-md:w-full border rounded-lg flex flex-col items-center p-10 bg-white mt-10 animate__animated animate__slideInRight animate__slow border-red-600">
+                    <div className="w-2/5 max-md:w-full border rounded-lg flex flex-col items-center p-10 bg-white mt-10 animate__animated animate__bounceInRight animate__slow border-red-600">
                         <p className="text-3xl font-extrabold tracking-wider font-great-vibes textDescribe">
                             Em Breve
                         </p>
                         <img className="p-20" src={Breve} alt="Breve" />
                     </div>
-                    <div className="w-2/5 max-md:w-full border rounded-lg flex flex-col items-center p-10 bg-white mt-10 animate__animated animate__slideInLeft animate__slower border-red-600">
+                    <div className="w-2/5 max-md:w-full border rounded-lg flex flex-col items-center p-10 bg-white mt-10 animate__animated animate__bounceInLeft animate__slower border-red-600">
                         <p className="text-3xl font-extrabold tracking-wider font-great-vibes textDescribe">
                             Em Breve
                         </p>
                         <img className="p-20" src={Breve} alt="Breve" />
                     </div>
-                    <div className="w-2/5 max-md:w-full border rounded-lg flex flex-col items-center p-10 bg-white mt-10 animate__animated animate__slideInRight animate__slower border-red-600">
+                    <div className="w-2/5 max-md:w-full border rounded-lg flex flex-col items-center p-10 bg-white mt-10 animate__animated animate__bounceInRight animate__slower border-red-600">
                         <p className="text-3xl font-extrabold tracking-wider font-great-vibes textDescribe">
                             Em Breve
                         </p>
                         <img className="p-20" src={Breve} alt="Breve" />
                     </div>
-                    <div className="w-2/5 max-md:w-full border rounded-lg flex flex-col items-center p-10 bg-white mt-10 animate__animated animate__slideInLeft animate__slower border-red-600">
+                    <div className="w-2/5 max-md:w-full border rounded-lg flex flex-col items-center p-10 bg-white mt-10 animate__animated animate__bounceInLeft animate__slower border-red-600">
                         <p className="text-3xl font-extrabold tracking-wider font-great-vibes textDescribe">
                             Em Breve
                         </p>

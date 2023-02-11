@@ -7,10 +7,16 @@ module.exports = {
   theme: {
     extend: {
         backgroundImage: {
-            'bg-paralax': "url(/src/assets/notebook.jpg)",
-            'netflix-paralax': "url(/src/assets/netflix.png)",
-            'youtube-paralax': "url(/src/assets/youtube.png)",
-            'pokedex-paralax': "url(/src/assets/pokedex.png)",
+            'intro': "url(/src/assets/notebook.jpg)",
+            'netflix-paralax': "url(/src/assets/netflix2.png)",
+            'youtube-paralax': "url(/src/assets/youtube2.png)",
+            'pokedex-paralax': "url(/src/assets/pokedex2.png)",
+        },
+        colors: {
+            'pallet-purple': "#301E67",
+            'pallet-black': "#03001C",
+            'pallet-cyan': "#5B8FB9",
+            'pallet-blue': "#B6EADA",
         },
         keyframes: {
             blink: {

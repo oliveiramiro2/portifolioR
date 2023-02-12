@@ -18,9 +18,6 @@ module.exports = {
             'pallet-cyan': "#5B8FB9",
             'pallet-blue': "#B6EADA",
         },
-        animation: {
-            blink: "blink .8s infinite"
-        },
         fontFamily: {
             'itim': ['itim', 'cursive'],
             'great-vibes': ['"Great Vibes"', 'cursive'],

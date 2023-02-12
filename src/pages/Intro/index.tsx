@@ -174,6 +174,8 @@ const Intro: React.FC = () => {
             trigger: textInfo.current,
             toggleActions: "restart pause pause none",
         })
+
+        document.title = "Ramiro portfólio - Home";
     }, []);
 
     return (

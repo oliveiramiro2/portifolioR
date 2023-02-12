@@ -14,13 +14,13 @@ const Header: React.FC<IProps> = ({ white = false, page = 0 }) => {
     return (
         <div
             className={clsx(
-                "self-start w-screen h-10 bg-black bg-opacity-90 fixed top-0 z-10 border-b-2 border-pallet-purple",
+                "self-start w-screen h-14 bg-black bg-opacity-90 fixed top-0 z-10 border-b-2 border-pallet-cyan",
                 {
                     " bg-white": white,
                 }
             )}
         >
-            <ul className="h-10 flex justify-between items-center pr-10 pl-10">
+            <ul className="h-10 flex justify-between items-end pr-10 pl-10">
                 <li>
                     {page === 1 ? (
                         <Link

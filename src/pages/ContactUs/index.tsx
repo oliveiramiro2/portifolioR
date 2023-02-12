@@ -11,9 +11,9 @@ import Header from "../../components/Header";
 
 const ContactUs: React.FC = () => {
     return (
-        <div className="min-h-screen w-screen bg-pallet-black">
-            <div className="bg-pallet-purple h-screen pb-20 m-3 mt-10 mb-10 rounded-lg">
-                <Header page={1} />
+        <div className="min-h-screen w-full bg-pallet-black pt-20 pb-20">
+            <Header page={1} />
+            <div className="bg-pallet-purple h-screen rounded-lg mb-10 mr-2 ml-2 pl-1 pr-1">
                 <div className="animate__animated animate__slideInDown animate__slow w-screen flex justify-center pt-20">
                     <p
                         className="text-pallet-black font-extrabold flex text-center font-great-vibes text-6xl"
@@ -22,7 +22,7 @@ const ContactUs: React.FC = () => {
                         Contatos
                     </p>
                 </div>
-                <div className="flex justify-center w-full mt-20 bg-pallet-black rounded-3xl">
+                <div className="flex justify-center w-full mt-20 bg-pallet-black rounded-xl">
                     <div className="flex flex-col items-start p-10 gap-y-6 ml-28">
                         <div className="animate__animated animate__bounceInLeft animate__faster">
                             <a

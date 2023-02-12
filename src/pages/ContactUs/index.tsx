@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
     AiFillLinkedin,
     AiFillGithub,
@@ -10,6 +10,11 @@ import { SiGmail } from "react-icons/si";
 import Header from "../../components/Header";
 
 const ContactUs: React.FC = () => {
+    useEffect(() => {
+        window.scrollTo({ top: 0 });
+        document.title = "Ramiro portfólio - Contatos";
+    }, []);
+
     return (
         <div className="min-h-screen w-full bg-pallet-black pt-20 pb-20">
             <Header page={1} />

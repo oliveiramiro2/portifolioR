@@ -88,151 +88,92 @@ const Intro: React.FC = () => {
                 }
             );
 
-        gsap.fromTo(
-            bgInfo1.current,
-            {
-                scrollTrigger: {
-                    trigger: textInfo.current,
-                    toggleActions: "restart none none none",
-                },
-                opacity: 0,
-                xPercent: -120,
-                start: "top top",
-            },
-            {
-                scrollTrigger: {
-                    trigger: textInfo.current,
-                    toggleActions: "restart none none none",
-                },
-                opacity: 1,
-                xPercent: 0,
-                start: "top top",
-                delay: 1,
-                duration: 1,
-                ease: Power1.easeInOut,
-            }
-        );
-        gsap.fromTo(
+
+        const scrollIntroAnimate = gsap.timeline();
+        scrollIntroAnimate
+        .fromTo(
             bgInfo2.current,
             {
-                scrollTrigger: {
-                    trigger: textInfo.current,
-                    toggleActions: "restart none none none",
-                },
                 opacity: 0,
                 yPercent: -120,
-                start: "top top",
             },
             {
-                scrollTrigger: {
-                    trigger: textInfo.current,
-                    toggleActions: "restart none none none",
-                },
                 opacity: 1,
                 yPercent: 0,
-                start: "top top",
+                ease: "cubic",
                 duration: 1,
-                ease: Power1.easeInOut,
+                delay: 0.3,
             }
-        );
-        gsap.fromTo(
+        )
+        .fromTo(
+            bgInfo1.current,
+            {
+                opacity: 0,
+                xPercent: -120,
+            },
+            {
+                opacity: 1,
+                xPercent: 0,
+                ease: "cubic",
+                duration: 1.2,
+            }
+        )
+        .fromTo(
+            textLink1.current,
+            {
+                scale: 0,
+                opacity: 0,
+            },
+            {
+                scale: 1,
+                opacity: 1,
+                ease: Power4.easeInOut,
+            }
+        )
+        .fromTo(
+            textLink2.current,
+            {
+                scale: 0,
+                opacity: 0,
+            },
+            {
+                scale: 1,
+                opacity: 1,
+                ease: Power4.easeInOut,
+            }
+        )
+        .fromTo(
+            textLink3.current,
+            {
+                scale: 0,
+                opacity: 0,
+            },
+            {
+                scale: 1,
+                opacity: 1,
+                ease: Power4.easeInOut,
+            }
+        )
+        .fromTo(
             textInfo.current,
             {
-                scrollTrigger: {
-                    trigger: textInfo.current,
-                    toggleActions: "restart none none none",
-                },
                 xPercent: 120,
                 scale: 0,
                 opacity: 0,
-                start: "top top",
             },
             {
-                scrollTrigger: {
-                    trigger: textInfo.current,
-                    toggleActions: "restart none none none",
-                },
                 xPercent: 1,
                 scale: 1,
                 opacity: 1,
-                start: "top top",
-                duration: 1,
-                delay: 2,
                 ease: Power2.easeOut,
             }
         );
-        gsap.fromTo(
-            textLink1.current,
-            {
-                scrollTrigger: {
-                    trigger: textInfo.current,
-                    toggleActions: "restart none none none",
-                },
-                scale: 0,
-                opacity: 0,
-                start: "top top",
-            },
-            {
-                scrollTrigger: {
-                    trigger: textInfo.current,
-                    toggleActions: "restart none none none",
-                },
-                scale: 1,
-                opacity: 1,
-                start: "top top",
-                duration: 0.3,
-                delay: 3.1,
-                ease: Power4.easeInOut,
-            }
-        );
-        gsap.fromTo(
-            textLink2.current,
-            {
-                scrollTrigger: {
-                    trigger: textInfo.current,
-                    toggleActions: "restart none none none",
-                },
-                scale: 0,
-                opacity: 0,
-                start: "top top",
-            },
-            {
-                scrollTrigger: {
-                    trigger: textInfo.current,
-                    toggleActions: "restart none none none",
-                },
-                scale: 1,
-                opacity: 1,
-                start: "top top",
-                duration: 0.3,
-                delay: 3.5,
-                ease: Power4.easeInOut,
-            }
-        );
-        gsap.fromTo(
-            textLink3.current,
-            {
-                scrollTrigger: {
-                    trigger: textInfo.current,
-                    toggleActions: "restart none none none",
-                },
-                scale: 0,
-                opacity: 0,
-                start: "top top",
-            },
-            {
-                scrollTrigger: {
-                    trigger: textInfo.current,
-                    toggleActions: "restart none none none",
-                },
-                scale: 1,
-                opacity: 1,
-                start: "top top",
-                duration: 0.3,
-                delay: 3.9,
-                ease: Power4.easeInOut,
-            }
-        );
+
+        ScrollTrigger.create({
+            animation: scrollIntroAnimate,
+            trigger: textInfo.current,
+            toggleActions: "restart pause pause none",
+        })
     }, []);
 
     return (
@@ -252,7 +193,7 @@ const Intro: React.FC = () => {
             <div className="h-screen z-0 flex flex-col items-center bg-intro bg-cover bg-no-repeat">
                 <h2
                     ref={title1}
-                    className="relative text-8xl font-great-vibes text-white pl-10 pt-10 max-xl:text-6xl max-sm:text-center max-sm:pl-0"
+                    className="relative text-8xl font-great-vibes text-pallet-black pl-10 pt-10 max-xl:text-6xl max-sm:text-center max-sm:pl-0"
                 >
                     Seja bem vindo!
                 </h2>
@@ -265,7 +206,7 @@ const Intro: React.FC = () => {
                 />
                 <h2
                     ref={title2}
-                    className="relative text-8xl font-great-vibes text-white pl-10 pt-10 max-xl:text-6xl max-sm:text-center max-sm:pl-0 max-sm:top-5"
+                    className="relative text-8xl font-great-vibes text-pallet-black pl-10 pt-10 max-xl:text-6xl max-sm:text-center max-sm:pl-0 max-sm:top-5"
                 >
                     Este é o meu portfólio ☺
                 </h2>
@@ -274,7 +215,7 @@ const Intro: React.FC = () => {
                         <BiChevronsDown
                             id="iconDown"
                             size={40}
-                            className="text-pallet-blue animate-bounce"
+                            className="text-pallet-purple animate-bounce"
                         />
                     </div>
                 </div>
@@ -285,13 +226,13 @@ const Intro: React.FC = () => {
             >
                 <div
                     ref={bgInfo1}
-                    className="bg-pallet-purple relative h-screen pl-5 pr-5"
+                    className="bg-pallet-purple relative h-screen pl-5 pr-5 border-r-8 border-white"
                 >
                     <div className="flex h-screen items-center justify-center">
                         <p
                             ref={textInfo}
                             id="textMyInfo"
-                            className="text-pallet-blue font-itim max-md:text-sm max-lg:text-center text-4xl after:content-['|'] after:ml-1 after:animate-blink after:text-pallet-blue"
+                            className="text-white font-itim max-md:text-sm max-lg:text-center text-4xl after:text-pallet-blue"
                         >
                             Me chamo Ramiro. Eu sou desenvolvedor Web/Mobile.
                             Estudante de t.i. e apaixonado por tecnologia e
@@ -301,7 +242,7 @@ const Intro: React.FC = () => {
                 </div>
                 <div
                     ref={bgInfo2}
-                    className="relative bg-pallet-blue h-screen w-1/2 pl-5 pr-5"
+                    className="relative bg-pallet-black h-screen w-1/2 pl-5 pr-5"
                 >
                     <div className="h-screen flex flex-col gap-y-20 items-start justify-around">
                         <div ref={textLink1} className="relative">
@@ -309,9 +250,9 @@ const Intro: React.FC = () => {
                                 <div className="flex justify-center items-center gap-2">
                                     <MdOutlineConnectWithoutContact
                                         size={35}
-                                        className="text-pallet-purple"
+                                        className="text-white"
                                     />
-                                    <p className="text-pallet-purple text-3xl font-extrabold font-great-vibes">
+                                    <p className="text-white text-3xl font-extrabold font-great-vibes">
                                         Contato
                                     </p>
                                 </div>
@@ -322,9 +263,9 @@ const Intro: React.FC = () => {
                                 <div className="flex justify-center items-center gap-2">
                                     <GiSkills
                                         size={35}
-                                        className="text-pallet-purple"
+                                        className="text-white"
                                     />
-                                    <p className="text-pallet-purple text-3xl font-extrabold font-great-vibes">
+                                    <p className="text-white text-3xl font-extrabold font-great-vibes">
                                         Habilidades
                                     </p>
                                 </div>
@@ -335,9 +276,9 @@ const Intro: React.FC = () => {
                                 <div className="flex justify-center items-center gap-2">
                                     <HiOutlineDeviceMobile
                                         size={35}
-                                        className="text-pallet-purple"
+                                        className="text-white"
                                     />
-                                    <p className="text-pallet-purple text-3xl font-extrabold font-great-vibes">
+                                    <p className="text-white text-3xl font-extrabold font-great-vibes">
                                         Projetos
                                     </p>
                                 </div>

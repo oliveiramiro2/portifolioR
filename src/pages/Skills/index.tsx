@@ -1,4 +1,4 @@
-import React, { useRef, useLayoutEffect } from "react";
+import React, { useRef, useLayoutEffect, useEffect } from "react";
 import {
     SiCss3,
     SiFigma,
@@ -30,6 +30,11 @@ interface IContainSkills {
 
 const ContainSkillsIcons: React.FC<IContainSkills> = ({ children, title }) => {
     const borderAnimated = useRef(null);
+
+    useEffect(() => {
+        window.scrollTo({ top: 0 });
+        document.title = "Ramiro portfólio - Habilidades";
+    }, [])
 
     useLayoutEffect(() => {
         gsap.fromTo(".hide-contains", {

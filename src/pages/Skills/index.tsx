@@ -19,7 +19,7 @@ import {
     SiTailwindcss,
     SiTypescript,
 } from "react-icons/si";
-import gsap, { Power4 } from "gsap";
+import gsap from "gsap";
 
 import Header from "../../components/Header";
 
@@ -48,21 +48,14 @@ const ContainSkillsIcons: React.FC<IContainSkills> = ({ children, title }) => {
             ease: "linear",
         });
 
-        const timelineBorder = gsap.timeline({ repeat: -1 });
+        const timelineBorder = gsap.timeline({ repeat: -1, repeatRefresh: true });
         timelineBorder
             .to(borderAnimated.current, {
                 width: 24,
                 height: 3,
-                x: 20,
-                duration: 0.2,
-                each: "linear",
-            })
-            .to(borderAnimated.current, {
-                width: 24,
-                height: 3,
                 x: 80,
-                duration: 0.5,
-                each: Power4.easeIn,
+                duration: 1,
+                each: "linear",
             })
             .to(borderAnimated.current, {
                 width: 3,
@@ -75,8 +68,8 @@ const ContainSkillsIcons: React.FC<IContainSkills> = ({ children, title }) => {
             })
             .to(borderAnimated.current, {
                 y: 120,
-                each: Power4.easeOut,
-                duration: 0.5,
+                each: "linear",
+                duration: 0.8,
             })
             .to(borderAnimated.current, {
                 height: 3,
@@ -87,12 +80,11 @@ const ContainSkillsIcons: React.FC<IContainSkills> = ({ children, title }) => {
                 width: 24,
                 x: 90,
                 each: "linear",
-                duration: 0.2,
             })
             .to(borderAnimated.current, {
                 x: 20,
                 each: "linear",
-                duration: 0.5,
+                duration: 0.8,
             })
             .to(borderAnimated.current, {
                 width: 3,
@@ -103,17 +95,16 @@ const ContainSkillsIcons: React.FC<IContainSkills> = ({ children, title }) => {
                 height: 24,
                 y: 132,
                 each: "linear",
-                duration: 0.2,
             })
             .to(borderAnimated.current, {
-                y: 60,
+                y: 20,
                 each: "linear",
-                duration: 0.5,
+                duration: 1,
             })
             .to(borderAnimated.current, {
                 height: 3,
-                y: 15,
-                each: Power4.easeOut,
+                y: 0,
+                each: "linear",
             });
     });
 

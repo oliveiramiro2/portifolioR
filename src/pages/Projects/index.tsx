@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BiArrowBack } from "react-icons/bi";
+import clsx from "clsx";
 
 import Netflix from "../../assets/netflix2.png";
 import Pokedex from "../../assets/Pokedex2.png";
@@ -34,156 +35,185 @@ const projectsKeys = [
     },
 ];
 
+interface IPropsContainProject {
+    setNumberProjectShowed?: Function;
+    title: string;
+    description: string;
+    img: number;
+}
+
+const ContainProject: React.FC<IPropsContainProject> = ({
+    setNumberProjectShowed,
+    title,
+    description,
+    img,
+}) => {
+    let imgShowed;
+
+    switch (img) {
+        case 0:
+            imgShowed = Netflix;
+            break;
+        case 1:
+            imgShowed = Pokedex;
+            break;
+        case 2:
+            imgShowed = Youtube;
+            break;
+        default:
+            imgShowed = Breve;
+            break;
+    }
+
+    return (
+        <div className="w-2/5 max-md:w-full border-2 rounded-lg flex flex-col items-center p-10 bg-violet-400 hover:bg-violet-800 mt-10 animate__animated animate__bounceInLeft border-pallet-black">
+            <p className="text-3xl font-extrabold tracking-wider font-great-vibes">
+                {title}
+            </p>
+            <img
+                className={clsx("p-20", {
+                    "cursor-pointer": setNumberProjectShowed !== undefined
+                })}
+                src={imgShowed}
+                alt="Netflix"
+                onClick={() =>
+                    setNumberProjectShowed !== undefined
+                        && setNumberProjectShowed(img)
+
+                }
+            />
+            <p className="font-extrabold">{description}</p>
+        </div>
+    );
+};
+
 const Projects: React.FC = () => {
     const [numberProjectShowed, setNumberProjectShowed] = useState<
         number | undefined
     >(undefined);
 
+    useEffect(() => {
+        window.scrollTo({ top: 0 });
+        document.title = "Ramiro portfólio - Projetos";
+    }, []);
+
     return (
-        <div className="min-h-screen bg-black pb-10 m-3 mt-10 mb-10 rounded-lg">
-            <Header white page={3} />
-            <div className="animate__animated animate__slideInDown animate__slow w-screen flex justify-center pt-20">
-                <h2
-                    id="projects"
-                    className="text-white flex text-center font-great-vibes text-6xl"
-                >
-                    Projetos
-                </h2>
-            </div>
-            {numberProjectShowed === undefined ? (
-                <div className="w-full flex flex-wrap mt-20 justify-between p-10">
-                    <div className="w-2/5 max-md:w-full border rounded-lg flex flex-col items-center p-10 bg-white hover:bg-gray-200 mt-10 animate__animated animate__bounceInLeft border-red-600">
-                        <p className="text-3xl font-extrabold tracking-wider font-great-vibes">
-                            Netflix
-                        </p>
-                        <img
-                            className="cursor-pointer p-20"
-                            src={Netflix}
-                            alt="Netflix"
-                            onClick={() => setNumberProjectShowed(0)}
-                        />
-                        <p className="font-extrabold">
-                            Aplicativo React-Native
-                        </p>
-                    </div>
-                    <div className="w-2/5 max-md:w-full border rounded-lg flex flex-col items-center p-10 bg-white hover:bg-gray-200 mt-10 animate__animated animate__bounceInRight border-red-600">
-                        <p className="text-3xl font-extrabold tracking-wider font-great-vibes textDescribe">
-                            Pokédex
-                        </p>
-                        <img
-                            className="cursor-pointer p-20"
-                            src={Pokedex}
-                            alt="Pokedex"
-                            onClick={() => setNumberProjectShowed(1)}
-                        />
-                        <p className="font-extrabold">Aplicativo ReactJS</p>
-                    </div>
-                    <div className="w-2/5 max-md:w-full border rounded-lg flex flex-col items-center p-10 bg-white hover:bg-gray-200 mt-10 animate__animated animate__bounceInLeft animate__slow border-red-600">
-                        <p className="text-3xl font-extrabold tracking-wider font-great-vibes textDescribe">
-                            Youtube
-                        </p>
-                        <img
-                            className="cursor-pointer p-20"
-                            src={Youtube}
-                            alt="Youtube"
-                            onClick={() => setNumberProjectShowed(2)}
-                        />
-                        <p className="font-extrabold">
-                            Aplicativo React-Native
-                        </p>
-                    </div>
-                    <div className="w-2/5 max-md:w-full border rounded-lg flex flex-col items-center p-10 bg-white mt-10 animate__animated animate__bounceInRight animate__slow border-red-600">
-                        <p className="text-3xl font-extrabold tracking-wider font-great-vibes textDescribe">
-                            Em Breve
-                        </p>
-                        <img className="p-20" src={Breve} alt="Breve" />
-                    </div>
-                    <div className="w-2/5 max-md:w-full border rounded-lg flex flex-col items-center p-10 bg-white mt-10 animate__animated animate__bounceInLeft animate__slower border-red-600">
-                        <p className="text-3xl font-extrabold tracking-wider font-great-vibes textDescribe">
-                            Em Breve
-                        </p>
-                        <img className="p-20" src={Breve} alt="Breve" />
-                    </div>
-                    <div className="w-2/5 max-md:w-full border rounded-lg flex flex-col items-center p-10 bg-white mt-10 animate__animated animate__bounceInRight animate__slower border-red-600">
-                        <p className="text-3xl font-extrabold tracking-wider font-great-vibes textDescribe">
-                            Em Breve
-                        </p>
-                        <img className="p-20" src={Breve} alt="Breve" />
-                    </div>
-                    <div className="w-2/5 max-md:w-full border rounded-lg flex flex-col items-center p-10 bg-white mt-10 animate__animated animate__bounceInLeft animate__slower border-red-600">
-                        <p className="text-3xl font-extrabold tracking-wider font-great-vibes textDescribe">
-                            Em Breve
-                        </p>
-                        <img className="p-20" src={Breve} alt="Breve" />
-                    </div>
+        <div className="min-h-screen bg-black pb-10 pt-20 rounded-lg">
+            <Header page={3} />
+            <div className="bg-pallet-purple pb-10 m-3 mb-10 rounded-lg">
+                <div className="animate__animated animate__slideInDown animate__slow w-screen flex justify-center pt-20">
+                    <h2
+                        id="projects"
+                        className="text-pallet-black font-extrabold tracking-wider flex text-center font-great-vibes text-6xl"
+                    >
+                        Projetos
+                    </h2>
                 </div>
-            ) : (
-                <div className="bg-white bg-opacity-90 m-10 mb-0 rounded-lg border-4 border-white">
-                    <div>
-                        <div className="cursor-pointer">
-                            <p
-                                className="font-itim flex items-center font-extrabold gap-1 m-2 text-red-500"
-                                onClick={() =>
-                                    setNumberProjectShowed(undefined)
-                                }
-                            >
-                                <BiArrowBack size="20px" /> Voltar
-                            </p>
-                        </div>
-                        <div className="flex items-center flex-col">
-                            <p className="font-itim font-bold text-2xl max-md:text-lg max-md:pl-10">
-                                {projectsKeys[numberProjectShowed].describe}
-                            </p>
-                            {projectsKeys[numberProjectShowed].mobile ? (
+                {numberProjectShowed === undefined ? (
+                    <div className="w-full flex flex-wrap mt-20 justify-between p-10">
+                        <ContainProject
+                            setNumberProjectShowed={setNumberProjectShowed}
+                            title="Netflix"
+                            description="Aplicativo React-Native"
+                            img={0}
+                        />
+                        <ContainProject
+                            setNumberProjectShowed={setNumberProjectShowed}
+                            title="Pokédex"
+                            description="Aplicativo ReactJS"
+                            img={1}
+                        />
+                        <ContainProject
+                            setNumberProjectShowed={setNumberProjectShowed}
+                            title="Youtube"
+                            description="Aplicativo React-Native"
+                            img={2}
+                        />
+                        <ContainProject
+                            title="Em Breve"
+                            description="Em Breve"
+                            img={3}
+                        />
+                        <ContainProject
+                            title="Em Breve"
+                            description="Em Breve"
+                            img={3}
+                        />
+                        <ContainProject
+                            title="Em Breve"
+                            description="Em Breve"
+                            img={3}
+                        />
+                    </div>
+                ) : (
+                    <div className="bg-violet-400 bg-opacity-90 m-10 mb-0 rounded-lg border-4 border-white">
+                        <div>
+                            <div className="cursor-pointer">
+                                <p
+                                    className="font-itim flex items-center font-extrabold text-xl gap-1 m-2 text-red-500"
+                                    onClick={() =>
+                                        setNumberProjectShowed(undefined)
+                                    }
+                                >
+                                    <BiArrowBack size={25} /> Voltar
+                                </p>
+                            </div>
+                            <div className="flex items-center flex-col">
                                 <p className="font-itim font-bold text-2xl max-md:text-lg max-md:pl-10">
-                                    Uma prévia será aberta com o appetize a
-                                    abaixo na tela!
+                                    {projectsKeys[numberProjectShowed].describe}
                                 </p>
-                            ) : (
-                                <p className="font-itim font-bold text-2xl text-cyan-600">
-                                    <a
-                                        href={
-                                            projectsKeys[numberProjectShowed]
-                                                .value
-                                        }
-                                        target="_blank"
-                                        rel="noreferrer"
-                                    >
-                                        O Link do site
-                                    </a>
+                                {projectsKeys[numberProjectShowed].mobile ? (
+                                    <p className="font-itim font-bold text-2xl max-md:text-lg max-md:pl-10">
+                                        Uma prévia será aberta com o appetize a
+                                        abaixo na tela!
+                                    </p>
+                                ) : (
+                                    <p className="font-itim font-bold text-2xl text-pallet-cyan">
+                                        <a
+                                            href={
+                                                projectsKeys[
+                                                    numberProjectShowed
+                                                ].value
+                                            }
+                                            target="_blank"
+                                            rel="noreferrer"
+                                        >
+                                            O Link do site
+                                        </a>
+                                    </p>
+                                )}
+                                <p className="font-itim font-extrabold text-xl mt-5">
+                                    Aprecie ☺
                                 </p>
+                                <a
+                                    href={
+                                        projectsKeys[numberProjectShowed]
+                                            .gitRepository
+                                    }
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="font-itim font-bold text-2xl text-sky-500 underline mt-10"
+                                >
+                                    Repositório no GitHub
+                                </a>
+                            </div>
+                        </div>
+                        <div className="flex items-center justify-center mt-10">
+                            {projectsKeys[numberProjectShowed].mobile && (
+                                <iframe
+                                    id="appetize"
+                                    src={`https://appetize.io/embed/${projectsKeys[numberProjectShowed].value}?device=pixel4`}
+                                    title="netflix"
+                                    height="700px"
+                                    width="320px"
+                                    frameBorder="0"
+                                    scrolling="no"
+                                />
                             )}
-                            <p className="font-itim font-bold text-lg">
-                                Aprecie ☺
-                            </p>
-                            <a
-                                href={
-                                    projectsKeys[numberProjectShowed]
-                                        .gitRepository
-                                }
-                                target="_blank"
-                                rel="noreferrer"
-                                className="font-itim font-bold text-2xl text-sky-500 underline mt-10"
-                            >
-                                Repositório no GitHub
-                            </a>
                         </div>
                     </div>
-                    <div className="flex items-center justify-center mt-10">
-                        {projectsKeys[numberProjectShowed].mobile && (
-                            <iframe
-                                id="appetize"
-                                src={`https://appetize.io/embed/${projectsKeys[numberProjectShowed].value}?device=pixel4`}
-                                title="netflix"
-                                height="700px"
-                                width="320px"
-                                frameBorder="0"
-                                scrolling="no"
-                            />
-                        )}
-                    </div>
-                </div>
-            )}
+                )}
+            </div>
         </div>
     );
 };

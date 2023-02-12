@@ -11,69 +11,107 @@ import Header from "../../components/Header";
 
 const ContactUs: React.FC = () => {
     return (
-        <div className="min-h-screen bg-black pb-20 m-3 mt-10 mb-10 rounded-lg">
-            <Header white page={1} />
-            <div className="animate__animated animate__slideInDown animate__slow w-screen flex justify-center pt-20">
-                <p
-                    className="text-white flex text-center font-great-vibes text-6xl"
-                    id="skills"
-                >
-                    Contatos
-                </p>
-            </div>
-            <div className="mt-20 flex flex-col items-center p-10 w-full gap-y-10 bg-white rounded-2xl">
-                <div className="animate__animated animate__bounceInLeft animate__faster">
-                    <a
-                        href="https://www.linkedin.com/in/oliveiramiro2/"
-                        target="_blank"
-                        rel="noreferrer"
+        <div className="min-h-screen w-screen bg-pallet-black">
+            <div className="bg-pallet-purple h-screen pb-20 m-3 mt-10 mb-10 rounded-lg">
+                <Header page={1} />
+                <div className="animate__animated animate__slideInDown animate__slow w-screen flex justify-center pt-20">
+                    <p
+                        className="text-pallet-black font-extrabold flex text-center font-great-vibes text-6xl"
+                        id="skills"
                     >
-                        <div className="flex items-center gap-2 pl-5">
-                            <AiFillLinkedin size={35} color="#0a66c2" />
-                            <span className="font-extrabold"> LinkedIn </span>
+                        Contatos
+                    </p>
+                </div>
+                <div className="flex justify-center w-full mt-20 bg-pallet-black rounded-3xl">
+                    <div className="flex flex-col items-start p-10 gap-y-6 ml-28">
+                        <div className="animate__animated animate__bounceInLeft animate__faster">
+                            <a
+                                href="https://www.linkedin.com/in/oliveiramiro2/"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                <div className="flex items-center gap-2 pl-5 hover:scale-125 transition-all">
+                                    <div className="bg-white rounded-full p-1 shadow-xl shadow-pallet-purple">
+                                        <AiFillLinkedin
+                                            size={35}
+                                            className="rounded-full p-1"
+                                            color="#0a66c2"
+                                        />
+                                    </div>
+                                    <span className="font-extrabold text-white">
+                                        {" "}
+                                        LinkedIn{" "}
+                                    </span>
+                                </div>
+                            </a>
                         </div>
-                    </a>
-                </div>
-                <div className="animate__animated animate__bounceInLeft animate__fast">
-                    <a
-                        href="https://github.com/oliveiramiro2"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        <div className="flex items-center gap-2 pl-5">
-                            <AiFillGithub size={35} />
-                            <span className="font-extrabold"> GitHub </span>
+                        <div className="animate__animated animate__bounceInLeft animate__fast">
+                            <a
+                                href="https://github.com/oliveiramiro2"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                <div className="flex items-center gap-2 pl-5 hover:scale-125 transition-all">
+                                    <div className="bg-white rounded-full p-1 shadow-xl shadow-pallet-purple">
+                                        <AiFillGithub
+                                            size={35}
+                                            className="bg-white rounded-full p-1"
+                                        />
+                                    </div>
+                                    <span className="font-extrabold text-white">
+                                        {" "}
+                                        GitHub{" "}
+                                    </span>
+                                </div>
+                            </a>
                         </div>
-                    </a>
-                </div>
-                <div className="animate__animated animate__bounceInLeft">
-                    <a
-                        href="https://drive.google.com/file/d/1_5deK1Pf4RFVfO0hiirNqSMOsZWnFUz_/view?usp=share_link"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        <div className="flex items-center gap-2 pl-5">
-                            <AiFillFilePdf color="#f00" size={35} />
-                            <span className="font-extrabold"> Currículo </span>
+                        <div className="animate__animated animate__bounceInLeft">
+                            <a
+                                href="https://drive.google.com/file/d/1_5deK1Pf4RFVfO0hiirNqSMOsZWnFUz_/view?usp=share_link"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                <div className="flex items-center gap-2 pl-5 hover:scale-125 transition-all">
+                                    <div className="bg-white rounded-full p-1 shadow-xl shadow-pallet-purple">
+                                        <AiFillFilePdf
+                                            color="#f00"
+                                            className="bg-white rounded-full p-1"
+                                            size={35}
+                                        />
+                                    </div>
+                                    <span className="font-extrabold text-white">
+                                        {" "}
+                                        Currículo{" "}
+                                    </span>
+                                </div>
+                            </a>
                         </div>
-                    </a>
-                </div>
-                <div className="animate__animated animate__bounceInLeft  animate__slow">
-                    <div className="flex items-center gap-2 pl-5">
-                        <AiOutlineWhatsApp color="#0f0" size={35} />
-                        <span className="font-extrabold">
-                            {" "}
-                            Whatsapp: 37 988037773{" "}
-                        </span>
-                    </div>
-                </div>
-                <div className="animate__animated animate__bounceInLeft  animate__slower">
-                    <div className="flex items-center gap-2 pl-5">
-                        <SiGmail color="#f00" size={35} />
-                        <span className="font-extrabold">
-                            {" "}
-                            E-mail: ramiromares95@gmail.com{" "}
-                        </span>
+                        <div className="animate__animated animate__bounceInLeft  animate__slow">
+                            <div className="flex items-center gap-2 pl-5 hover:scale-125 transition-all">
+                                <div className="bg-white rounded-full p-1 shadow-xl shadow-pallet-purple">
+                                    <AiOutlineWhatsApp
+                                        color="#0f0"
+                                        className="bg-white rounded-full p-1"
+                                        size={35}
+                                    />
+                                </div>
+                                <span className="font-extrabold text-white">
+                                    {" "}
+                                    Whatsapp: 37 988037773{" "}
+                                </span>
+                            </div>
+                        </div>
+                        <div className="animate__animated animate__bounceInLeft  animate__slower">
+                            <div className="flex items-center gap-2 pl-5 hover:scale-125 transition-all">
+                                <div className="bg-white rounded-full p-1 shadow-xl shadow-pallet-purple">
+                                    <SiGmail color="#f00" size={35} />
+                                </div>
+                                <span className="font-extrabold text-white">
+                                    {" "}
+                                    E-mail: ramiromares95@gmail.com{" "}
+                                </span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

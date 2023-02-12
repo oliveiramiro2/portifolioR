@@ -14,7 +14,7 @@ const Header: React.FC<IProps> = ({ white = false, page = 0 }) => {
     return (
         <div
             className={clsx(
-                "self-start w-screen h-10 bg-black bg-opacity-90 fixed top-0 z-10",
+                "self-start w-screen h-10 bg-black bg-opacity-90 fixed top-0 z-10 border-b-2 border-pallet-purple",
                 {
                     " bg-white": white,
                 }

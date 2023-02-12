@@ -28,7 +28,7 @@ const ContactUs: React.FC = () => {
                     </p>
                 </div>
                 <div className="flex justify-center w-full mt-20 bg-pallet-black rounded-xl">
-                    <div className="flex flex-col items-start p-10 gap-y-6 ml-28">
+                    <div className="flex flex-col items-start p-10 gap-y-6 ml-28 pb-3 max-sm:ml-5">
                         <div className="animate__animated animate__bounceInLeft animate__faster">
                             <a
                                 href="https://www.linkedin.com/in/oliveiramiro2/"

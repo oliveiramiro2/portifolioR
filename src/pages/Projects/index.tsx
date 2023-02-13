@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useLayoutEffect, useRef } from "react";
 import { BiArrowBack } from "react-icons/bi";
 import clsx from "clsx";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 import Netflix from "../../assets/netflix2.png";
 import Pokedex from "../../assets/Pokedex2.png";
@@ -65,24 +67,51 @@ const ContainProject: React.FC<IPropsContainProject> = ({
             break;
     }
 
+    const containAllProject = useRef(null)
+
+    useLayoutEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const animationContainProject = gsap.fromTo(
+            ".containProject",
+            {
+                opacity: 0,
+                scaleY: 0,
+            },
+            {
+                opacity: 1,
+                scaleY: 1,
+                ease: "linear",
+                stagger: 1,
+                duration: 0.8,
+            }
+        );
+
+        ScrollTrigger.create({
+            trigger: containAllProject.current,
+            animation: animationContainProject,
+            start: "bottom bottom",
+            end: "center top",
+        });
+    });
+
     return (
-        <div className="w-2/5 max-md:w-full border-2 rounded-lg flex flex-col items-center p-10 bg-violet-400 hover:bg-violet-800 mt-10 animate__animated animate__bounceInLeft border-pallet-black">
-            <p className="text-3xl font-extrabold tracking-wider font-great-vibes">
+        <div ref={containAllProject} className="containProject w-2/5 max-md:w-full border-2 rounded-lg flex flex-col items-center p-10 bg-pallet-black hover:bg-black mt-10 border-pallet-black">
+            <p className="text-3xl font-extrabold text-pallet-purple tracking-wider font-great-vibes">
                 {title}
             </p>
             <img
                 className={clsx("p-20", {
-                    "cursor-pointer": setNumberProjectShowed !== undefined
+                    "cursor-pointer": setNumberProjectShowed !== undefined,
                 })}
                 src={imgShowed}
                 alt="Netflix"
                 onClick={() =>
-                    setNumberProjectShowed !== undefined
-                        && setNumberProjectShowed(img)
-
+                    setNumberProjectShowed !== undefined &&
+                    setNumberProjectShowed(img)
                 }
             />
-            <p className="font-extrabold">{description}</p>
+            <p className="font-extrabold text-pallet-purple">{description}</p>
         </div>
     );
 };
@@ -97,11 +126,30 @@ const Projects: React.FC = () => {
         document.title = "Ramiro portfólio - Projetos";
     }, []);
 
+    const projectContain = useRef(null);
+
+    useLayoutEffect(() => {
+        const showProjectContain = gsap.timeline();
+        showProjectContain.fromTo(
+            projectContain.current,
+            {
+                opacity: 0,
+                scaleX: 0,
+            },
+            {
+                opacity: 1,
+                scaleX: 1,
+                duration: 1.2,
+                ease: "linear",
+            }
+        );
+    });
+
     return (
         <div className="min-h-screen bg-black pb-10 pt-20 rounded-lg">
             <Header page={3} />
             <div className="bg-pallet-purple pb-10 m-3 mb-10 rounded-lg">
-                <div className="animate__animated animate__slideInDown animate__slow w-screen flex justify-center pt-20">
+                <div className="animate__animated animate__slideInDown animate__slow w-screen flex justify-center pt-10">
                     <h2
                         id="projects"
                         className="text-pallet-black font-extrabold tracking-wider flex text-center font-great-vibes text-6xl"
@@ -110,7 +158,7 @@ const Projects: React.FC = () => {
                     </h2>
                 </div>
                 {numberProjectShowed === undefined ? (
-                    <div className="w-full flex flex-wrap mt-20 justify-between p-10">
+                    <div className="w-full flex flex-wrap mt-10 justify-between p-10">
                         <ContainProject
                             setNumberProjectShowed={setNumberProjectShowed}
                             title="Netflix"
@@ -146,7 +194,10 @@ const Projects: React.FC = () => {
                         />
                     </div>
                 ) : (
-                    <div className="bg-violet-400 bg-opacity-90 m-10 mb-0 rounded-lg border-4 border-white">
+                    <div
+                        ref={projectContain}
+                        className="bg-violet-400 bg-opacity-90 m-10 mb-0 rounded-lg border-4 border-white"
+                    >
                         <div>
                             <div className="cursor-pointer">
                                 <p

@@ -10,7 +10,7 @@ module.exports = {
             'intro': "url(/src/assets/notebook.jpg)",
             'netflix-paralax': "url(/src/assets/netflix2.png)",
             'youtube-paralax': "url(/src/assets/youtube2.png)",
-            'pokedex-paralax': "url(/src/assets/pokedex2.png)",
+            'pokedex-paralax': "url(/src/assets/pokedex.png)",
         },
         colors: {
             'pallet-purple': "#6945b8",

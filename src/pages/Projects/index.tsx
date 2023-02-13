@@ -47,7 +47,7 @@ interface IPropsContainProject {
 const containProjects: IPropsContainProject[] = [
     {
         title: "Netflix",
-        description: "Aplicativo ReactJS",
+        description: "Aplicativo React-Native",
         img: 0,
     },
     {
@@ -57,7 +57,7 @@ const containProjects: IPropsContainProject[] = [
     },
     {
         title: "Youtube",
-        description: "Aplicativo ReactJS",
+        description: "Aplicativo React-Native",
         img: 2,
     },
     {

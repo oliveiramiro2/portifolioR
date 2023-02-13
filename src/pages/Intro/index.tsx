@@ -26,6 +26,7 @@ const Intro: React.FC = () => {
         const animateTitle = gsap.timeline();
         animateTitle
             .to("#screenInitial3", {
+                delay: 1,
                 xPercent: -100,
                 ease: Power1.easeIn,
             })
@@ -88,92 +89,91 @@ const Intro: React.FC = () => {
                 }
             );
 
-
         const scrollIntroAnimate = gsap.timeline();
         scrollIntroAnimate
-        .fromTo(
-            bgInfo2.current,
-            {
-                opacity: 0,
-                yPercent: -120,
-            },
-            {
-                opacity: 1,
-                yPercent: 0,
-                ease: "cubic",
-                duration: 1,
-                delay: 0.3,
-            }
-        )
-        .fromTo(
-            bgInfo1.current,
-            {
-                opacity: 0,
-                xPercent: -120,
-            },
-            {
-                opacity: 1,
-                xPercent: 0,
-                ease: "cubic",
-                duration: 1.2,
-            }
-        )
-        .fromTo(
-            textLink1.current,
-            {
-                scale: 0,
-                opacity: 0,
-            },
-            {
-                scale: 1,
-                opacity: 1,
-                ease: Power4.easeInOut,
-            }
-        )
-        .fromTo(
-            textLink2.current,
-            {
-                scale: 0,
-                opacity: 0,
-            },
-            {
-                scale: 1,
-                opacity: 1,
-                ease: Power4.easeInOut,
-            }
-        )
-        .fromTo(
-            textLink3.current,
-            {
-                scale: 0,
-                opacity: 0,
-            },
-            {
-                scale: 1,
-                opacity: 1,
-                ease: Power4.easeInOut,
-            }
-        )
-        .fromTo(
-            textInfo.current,
-            {
-                xPercent: 120,
-                scale: 0,
-                opacity: 0,
-            },
-            {
-                xPercent: 1,
-                scale: 1,
-                opacity: 1,
-                ease: Power2.easeOut,
-            }
-        );
+            .fromTo(
+                bgInfo2.current,
+                {
+                    opacity: 0,
+                    yPercent: -120,
+                },
+                {
+                    opacity: 1,
+                    yPercent: 0,
+                    ease: "cubic",
+                    duration: 1,
+                    delay: 0.3,
+                }
+            )
+            .fromTo(
+                bgInfo1.current,
+                {
+                    opacity: 0,
+                    xPercent: -120,
+                },
+                {
+                    opacity: 1,
+                    xPercent: 0,
+                    ease: "cubic",
+                    duration: 1.2,
+                }
+            )
+            .fromTo(
+                textLink1.current,
+                {
+                    scale: 0,
+                    opacity: 0,
+                },
+                {
+                    scale: 1,
+                    opacity: 1,
+                    ease: Power4.easeInOut,
+                }
+            )
+            .fromTo(
+                textLink2.current,
+                {
+                    scale: 0,
+                    opacity: 0,
+                },
+                {
+                    scale: 1,
+                    opacity: 1,
+                    ease: Power4.easeInOut,
+                }
+            )
+            .fromTo(
+                textLink3.current,
+                {
+                    scale: 0,
+                    opacity: 0,
+                },
+                {
+                    scale: 1,
+                    opacity: 1,
+                    ease: Power4.easeInOut,
+                }
+            )
+            .fromTo(
+                textInfo.current,
+                {
+                    xPercent: 120,
+                    scale: 0,
+                    opacity: 0,
+                },
+                {
+                    xPercent: 1,
+                    scale: 1,
+                    opacity: 1,
+                    ease: Power2.easeOut,
+                }
+            );
 
         ScrollTrigger.create({
             animation: scrollIntroAnimate,
             trigger: textInfo.current,
             toggleActions: "restart pause pause none",
-        })
+        });
 
         document.title = "Ramiro portfólio - Home";
     }, []);

@@ -44,6 +44,39 @@ interface IPropsContainProject {
     img: number;
 }
 
+const containProjects: IPropsContainProject[] = [
+    {
+        title: "Netflix",
+        description: "Aplicativo ReactJS",
+        img: 0,
+    },
+    {
+        title: "Pokédex",
+        description: "Aplicativo ReactJS",
+        img: 1,
+    },
+    {
+        title: "Youtube",
+        description: "Aplicativo ReactJS",
+        img: 2,
+    },
+    {
+        title: "Em Breve",
+        description: "Em Breve",
+        img: 3,
+    },
+    {
+        title: "Em Breve",
+        description: "Em Breve",
+        img: 4,
+    },
+    {
+        title: "Em Breve",
+        description: "Em Breve",
+        img: 5,
+    },
+];
+
 const ContainProject: React.FC<IPropsContainProject> = ({
     setNumberProjectShowed,
     title,
@@ -67,18 +100,20 @@ const ContainProject: React.FC<IPropsContainProject> = ({
             break;
     }
 
-    const containAllProject = useRef(null)
+    const containAllProject = useRef(null);
 
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
-        const animationContainProject = gsap.fromTo(
-            ".containProject",
+        gsap.fromTo(
+            containAllProject.current,
             {
-                opacity: 0,
+                scrollTrigger: containAllProject.current,
                 scaleY: 0,
+                stagger: 1,
             },
             {
+                scrollTrigger: containAllProject.current,
                 opacity: 1,
                 scaleY: 1,
                 ease: "linear",
@@ -86,17 +121,13 @@ const ContainProject: React.FC<IPropsContainProject> = ({
                 duration: 0.8,
             }
         );
-
-        ScrollTrigger.create({
-            trigger: containAllProject.current,
-            animation: animationContainProject,
-            start: "bottom bottom",
-            end: "center top",
-        });
     });
 
     return (
-        <div ref={containAllProject} className="containProject w-2/5 max-md:w-full border-2 rounded-lg flex flex-col items-center p-10 bg-pallet-black hover:bg-black mt-10 border-pallet-black">
+        <div
+            ref={containAllProject}
+            className="opacity-0 w-2/5 max-md:w-full border-2 rounded-lg flex flex-col items-center p-10 bg-pallet-black hover:bg-black mt-10 border-pallet-black"
+        >
             <p className="text-3xl font-extrabold text-pallet-purple tracking-wider font-great-vibes">
                 {title}
             </p>
@@ -146,9 +177,9 @@ const Projects: React.FC = () => {
     });
 
     return (
-        <div className="min-h-screen bg-black pb-10 pt-20 rounded-lg">
+        <div className="min-h-screen w-screen bg-black pb-10 pt-20 rounded-lg">
             <Header page={3} />
-            <div className="bg-pallet-purple pb-10 m-3 mb-10 rounded-lg">
+            <div className="bg-pallet-purple flex flex-col self-center pb-10 mb-10 ml-10 mr-10 rounded-lg">
                 <div className="animate__animated animate__slideInDown animate__slow w-screen flex justify-center pt-10">
                     <h2
                         id="projects"
@@ -159,39 +190,19 @@ const Projects: React.FC = () => {
                 </div>
                 {numberProjectShowed === undefined ? (
                     <div className="w-full flex flex-wrap mt-10 justify-between p-10">
-                        <ContainProject
-                            setNumberProjectShowed={setNumberProjectShowed}
-                            title="Netflix"
-                            description="Aplicativo React-Native"
-                            img={0}
-                        />
-                        <ContainProject
-                            setNumberProjectShowed={setNumberProjectShowed}
-                            title="Pokédex"
-                            description="Aplicativo ReactJS"
-                            img={1}
-                        />
-                        <ContainProject
-                            setNumberProjectShowed={setNumberProjectShowed}
-                            title="Youtube"
-                            description="Aplicativo React-Native"
-                            img={2}
-                        />
-                        <ContainProject
-                            title="Em Breve"
-                            description="Em Breve"
-                            img={3}
-                        />
-                        <ContainProject
-                            title="Em Breve"
-                            description="Em Breve"
-                            img={3}
-                        />
-                        <ContainProject
-                            title="Em Breve"
-                            description="Em Breve"
-                            img={3}
-                        />
+                        {containProjects.map(value => (
+                            <ContainProject
+                                title={value.title}
+                                description={value.description}
+                                img={value.img}
+                                setNumberProjectShowed={
+                                    value.img <= 2
+                                        ? setNumberProjectShowed
+                                        : undefined
+                                }
+                                key={value.img}
+                            />
+                        ))}
                     </div>
                 ) : (
                     <div
